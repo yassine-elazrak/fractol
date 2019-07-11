@@ -6,7 +6,7 @@
 /*   By: yelazrak <yelazrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 13:26:27 by yelazrak          #+#    #+#             */
-/*   Updated: 2019/07/11 15:36:40 by yelazrak         ###   ########.fr       */
+/*   Updated: 2019/07/11 17:00:35 by yelazrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,12 @@ int		ft_platform(t_cl *cl)
 		return (1);
 	}
 	return (0);
+}
+
+void	ft_msg_error(void)
+{
+	ft_putendl("usage:");
+	ft_putendl("                  mandlebrot");
+	ft_putendl("                  julia");
+	ft_putendl("                  burning_ship");
 }

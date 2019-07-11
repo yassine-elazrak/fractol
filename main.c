@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   man.c                                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yelazrak <yelazrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 15:45:01 by yelazrak          #+#    #+#             */
-/*   Updated: 2019/07/11 15:43:55 by yelazrak         ###   ########.fr       */
+/*   Updated: 2019/07/11 17:03:24 by yelazrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void			ft_00(t_init *init)
 
 int				ft_get_name_of_fractal(char *name, int argc, t_init *init)
 {
+	ft_00(init);
 	if (ft_strcmp(name, "mandlebrot") == 0 && argc == 2)
 		init->name_of_fractol = ft_strdup("mandlebrot");
 	else if (ft_strcmp(name, "julia") == 0 && argc == 2)
@@ -72,10 +73,8 @@ int				ft_get_name_of_fractal(char *name, int argc, t_init *init)
 		init->name_of_fractol = ft_strdup("burning_ship");
 	else
 	{
-		ft_putendl("usage:");
-		ft_putendl("                  mandlebrot");
-		ft_putendl("                  julia");
-		ft_putendl("                  burning_ship");
+		ft_msg_error();
+		free(init);
 		return (0);
 	}
 	return (1);
@@ -89,10 +88,12 @@ int				main(int argc, char **argv)
 	t_init			*init;
 
 	if (argc != 2)
+	{
+		ft_msg_error();
 		return (0);
+	}
 	if (!(init = (t_init *)malloc(sizeof(t_init))))
 		exit(0);
-	ft_00(init);
 	if ((ft_get_name_of_fractal(argv[1], argc, init) == 0))
 		return (0);
 	init->ptr = mlx_init();

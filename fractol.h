@@ -6,7 +6,7 @@
 /*   By: yelazrak <yelazrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/23 16:57:11 by yelazrak          #+#    #+#             */
-/*   Updated: 2019/07/11 15:21:37 by yelazrak         ###   ########.fr       */
+/*   Updated: 2019/07/11 16:57:12 by yelazrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int						kernel_2(t_init *init);
 char					*ft_tab_2(char *name);
 void					ft_change(t_init *init);
 int						ft_platform(t_cl *cl);
+void					ft_msg_error();
 
 #endif
